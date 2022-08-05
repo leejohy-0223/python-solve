@@ -1,6 +1,5 @@
 def solution(line):
     result = []
-    uy, dy, ux, dx = 10e10, -10e10, 10e10, -10e10
     for i in range(0, len(line) - 1):
         A, B, E = line[i]
         for j in range(i + 1, len(line)):
@@ -14,19 +13,22 @@ def solution(line):
 
             if ((B * F) - (E * D)) % denominator == 0 and ((E * C) - (A * F)) % denominator == 0:
                 result.append([x, y])
-                ux, uy, dx, dy = min(x, ux), min(y, uy), max(x, dx), max(y, dy)
 
-    answer = [['.'] * (dx - ux + 1) for _ in range(dy - uy + 1)]
+    xs = [r[0] for r in result]
+    x_min = min(xs)
+    x_max = max(xs)
 
-    for x, y in result:
-        answer[y - uy][x - ux] = '*'
+    ys = [r[1] for r in result]
+    y_min = min(ys)
+    y_max = max(ys)
 
-    for i in range(len(answer)):
-        answer[i] = ''.join(answer[i])
+    answer = [['.'] * (x_max - x_min + 1) for _ in range(y_max - y_min + 1)]
 
-    answer.reverse()
-    return answer
+    for r in result:
+        x, y = r
+        answer[y - y_min][x - x_min] = "*"
 
+    return [''.join(ans) for ans in answer][::-1]
 
 if __name__ == '__main__':
     print(solution([[2, -1, 4], [-2, -1, 4], [0, -1, 1], [5, -8, -12], [5, 8, 12]]))
