@@ -13,4 +13,4 @@ class Solution(object):
 
 if __name__ == '__main__':
     print(Solution().longestCommonPrefix(["flower", "flow", "flight"]))
-    # Solution().longestCommonPrefix(["dog", "racecar", "car"])
+    # Solution.py().longestCommonPrefix(["dog", "racecar", "car"])

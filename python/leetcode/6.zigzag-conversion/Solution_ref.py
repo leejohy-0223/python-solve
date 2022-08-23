@@ -11,7 +11,7 @@ class Solution:
         return ''.join(rows)
 
 if __name__ == '__main__':
-    # print(Solution().convert("PAYPALISHIRING", 5))
-    # print(Solution().convert("A", 1))
-    # print(Solution().convert("ABCD", 3))
+    # print(Solution.py().convert("PAYPALISHIRING", 5))
+    # print(Solution.py().convert("A", 1))
+    # print(Solution.py().convert("ABCD", 3))
     print(Solution().convert("AB", 1))
