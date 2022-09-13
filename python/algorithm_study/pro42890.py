@@ -40,13 +40,3 @@ def solution(relation):
 if __name__ == '__main__':
     print(solution([["100", "ryan", "music", "2"], ["200", "apeach", "math", "2"], ["300", "tube", "computer", "3"],
                     ["400", "con", "computer", "4"], ["500", "muzi", "music", "3"], ["600", "apeach", "music", "2"]]))
-
-    # tmp = []
-    # tmp.append([1, 2, 3])
-    # tmp.append([3, 4])
-    # tmp.append([5])
-
-    # tests = [1, 2, 3]
-    # for t in tmp:
-    #     if not set(t) - set(tests):
-    #         print(t)
