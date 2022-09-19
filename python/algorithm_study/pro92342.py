@@ -41,13 +41,17 @@ def permu(template):
         permu(template + [i])
 
 
+def string_convert(r):
+    s = list(map(str, r[::-1]))
+    return ''.join(s)
+
+
 def solution(n, info):
     global arrowCount, appeach
     arrowCount = n
     appeach = info
     permu([])
-    results = sorted(result, key=lambda r: (r[10], r[9], r[8], r[7], r[6], r[5], r[4], r[3], r[2], r[1], r[0]))[-1] if len(
-        result) != 0 else [-1]
+    results = sorted(result, key=lambda r: string_convert(r))[-1] if len(result) != 0 else [-1]
 
     return results
 
